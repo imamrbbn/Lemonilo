@@ -19,18 +19,19 @@ function App() {
 
       <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen name="Home" 
+          <Stack.Screen
+              name='Navbar'
+              component={HomeNavbar}
+              options={{ headerShown: false }}
+              />
+          {/* <Stack.Screen name="Home" 
             component={ HomeScreen } 
             options={{ headerShown: false }}
-            />
+            /> */}
           <Stack.Screen
               name='Maintenance'
               component={UnderMaintenance}
               options={{ headerShown: false }}
-              />
-          <Stack.Screen
-              name='Navbar'
-              component={HomeNavbar}
               />
         </Stack.Navigator>
       </NavigationContainer>

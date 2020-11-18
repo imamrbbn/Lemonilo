@@ -17,7 +17,7 @@ import BannerCard from '../components/BannerCard'
 import MenuCard from '../components/MenuCard'
 import ProductCard from '../components/ProductCard'
 
-export default function HomeScreen() {
+export default function HomeScreen({ navigation }) {
   return (
     <>
       <SafeAreaView>
@@ -29,7 +29,7 @@ export default function HomeScreen() {
 
           
           <View style={styles.content}>
-            <MenuCard/>
+            <MenuCard navigation = {navigation}/>
           </View>
 
           <View style={styles.content}>

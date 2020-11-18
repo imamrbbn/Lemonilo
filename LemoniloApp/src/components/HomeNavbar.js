@@ -23,7 +23,7 @@ function HomeNavbar() {
   return (
     <Tab.Navigator tabBarOptions={{
       activeTintColor: '#e91e63',
-      style: { height: 50, paddingBottom: 5 },
+      style: { height: 50, paddingBottom: 5, },
       labelStyle: {
         fontSize: 12,
         fontWeight: 'bold'
@@ -38,11 +38,11 @@ function HomeNavbar() {
           )
         }}/>
       <Tab.Screen 
-        name="Chat"
+        name="Cart"
         component={UnderMaintenance} 
         options={{
           tabBarIcon: (props) => (
-            <IconBottom data={props} image={require('../assets/chat.png')} />
+            <IconBottom data={props} image={require('../assets/cart.png')} />
           )
         }}/>
     </Tab.Navigator>

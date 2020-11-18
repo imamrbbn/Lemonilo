@@ -10,9 +10,10 @@ import {
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 import WaveBackground from '../components/WaveBackground'
-import UnderMaintenanceGif from '../assets/maintenance.gif'
+// import UnderMaintenanceGif from '../assets/maintenance.gif'
+import LottieView from 'lottie-react-native';
 
-export default function UnderMaintenance() {
+export default function UnderMaintenance({navigation}) {
   return (
     <>
       <SafeAreaView>
@@ -22,10 +23,12 @@ export default function UnderMaintenance() {
           <WaveBackground/>
 
           <View style={styles.content}>
-            <Image
-                source={UnderMaintenanceGif}
-                style={{ width: 250, height: 250}}
-              />
+            <LottieView
+              source={require('../assets/noodleLottie.json')} autoPlay loop
+              style={{
+                  height: 200,
+                  width: 200
+            }}/>
             <Text style={styles.sectionTitle}>Under Maintenance...</Text>
 
           </View>
@@ -58,6 +61,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: '600',
     color: Colors.black,
+    textAlign: 'center'
   },
   sectionDescription: {
     marginTop: 8,
@@ -77,6 +81,6 @@ const styles = StyleSheet.create({
     textAlign: 'right',
   },
   content: {
-    top: 40
+    top: 175
   }
 });

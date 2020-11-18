@@ -1,53 +1,58 @@
 import React from 'react'
 import { Image, View, StyleSheet, Text } from 'react-native'
+import { TouchableHighlight, TouchableOpacity } from 'react-native-gesture-handler'
 
-function MenuCard({navigation}) {
+function MenuCard(props) {
+  const navigation = props.navigation
   return (
     <>
-    <Text style={styles.sectionHeadTitle}>Categories</Text>
+    <View style={styles.headContent}>
+      <Text style={styles.sectionHeadTitle}>Categories</Text>
+      <Image source={require('../assets/categories.png')} style={styles.headIcon} />
+    </View>
     <View style={ styles.contentContainer}>
       <View style={styles.newTaskContainer} >
-        <View style={styles.card}
+        <TouchableOpacity style={styles.card}
           onPress={() => {
             navigation.replace('Maintenance')
           }}>
             <Image source={require('../assets/food_icon.png')} style={styles.icon} />
             <Text style={styles.sectionTitle}>Makanan</Text>
-        </View>                         
-        <View style={styles.card}
+        </TouchableOpacity>                         
+        <TouchableOpacity style={styles.card}
           onPress={() => {
             navigation.replace('Maintenance')
           }}>
             <Image source={require('../assets/snack_icon.png')} style={styles.icon} />
             <Text style={styles.sectionTitle}>Cemilan</Text>
-        </View>
-        <View style={styles.card} 
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.card} 
           onPress={() => {
             navigation.replace('Maintenance')
           }}>
             <Image source={require('../assets/drink_icon.png')} style={styles.icon} />
             <Text style={styles.sectionTitle}>Minuman</Text>
-        </View>  
+        </TouchableOpacity>  
       </View>
       <View style={[styles.newTaskContainer]}>
-      <View style={styles.card} onPress={() => {
+      <TouchableOpacity style={styles.card} onPress={() => {
             navigation.replace('Maintenance')
           }}>
             <Image source={require('../assets/cathering_icon.png')} style={styles.icon} />
             <Text style={styles.sectionTitle}>Katering</Text>
-        </View>  
-        <View style={styles.card} onPress={() => {
+        </TouchableOpacity>  
+        <TouchableOpacity style={styles.card} onPress={() => {
             navigation.replace('Maintenance')
           }}>
             <Image source={require('../assets/moms_icon.jpg')} style={styles.icon} />
             <Text style={styles.sectionTitle}>Ibu & Anak</Text>
-        </View>
-        <View style={styles.card} onPress={() => {
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.card} onPress={() => {
             navigation.replace('Maintenance')
           }}>
             <Image source={require('../assets/herbal_icon.jpg')} style={styles.icon} />
             <Text style={styles.sectionTitle}>Perawatan</Text>
-        </View>           
+        </TouchableOpacity>           
       </View>
     </View>
     </>
@@ -60,10 +65,11 @@ const styles = StyleSheet.create({
       padding: 10,
       backgroundColor: '#27ae60',
       top: 10,
-      width: '100%'
+      width: '100%',
   },
   newTaskContainer: {
       flexDirection: 'row',
+      justifyContent: 'center', 
       width: '100%',
       shadowRadius: 10,
       shadowOpacity: 0.6,
@@ -74,27 +80,50 @@ const styles = StyleSheet.create({
       }
   },
   card: {
-    width: '30%',
+    width: 100,
     backgroundColor: 'white',
     borderRadius: 20,
     padding: 5,
     margin: 5,
     alignItems: 'center',
+    marginHorizontal: 10,
+    shadowColor: "#000",
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 3,
+    },
+    shadowOpacity: 0.5,
+    shadowRadius: 4.65,
+    elevation: 6,
   },
   icon: {
     maxWidth: '100%', 
     height: 70,
     width: 70
   },
-  sectionTitle: {
+  headContent : {
+    flexDirection: 'row',
+  },
+  headIcon: {
+    maxWidth: '100%', 
+    height: 20,
+    width: 20,
+    tintColor:'#e91e63',
+    marginTop: 'auto',
+    marginBottom: 'auto',
+    marginLeft:'auto',
+    marginRight: 20
+  },
+    sectionTitle: {
     fontWeight: 'bold',
-    color: 'black',
+    color: '#e91e63',
   },
   sectionHeadTitle: {
     fontSize: 24,
-    fontWeight: '600',
-    color: 'black',
-    marginLeft: 10
+    fontWeight: 'bold',
+    color: '#e91e63',
+    marginLeft: 10,
   },
   
 });
